@@ -19,6 +19,9 @@ session_start();
 	function buy(){
 		alert("Your purchase was successful!");
 	}
+	function empty(){
+		alert("Your shopping cart is empty!");
+	}
 	</script>
 </head>
 <body>
@@ -86,9 +89,18 @@ echo "<tr> <th>Name</th> <th>Price</th> </tr>";
 $conn->close();
 ?>
 <br>
- <form action="reset.php" onclick="buy()" style="text-align: center">
-    <input type="image" src="css/images/buy_button.jpg" alt="Submit" height="170" width="170">
-  </form>
+<?php 
+if($_SESSION['sum']!=0){
+ echo '<form action="reset.php" onclick="buy()" style="text-align: center">';
+    echo '<input type="image" src="css/images/buy_button.jpg" alt="Submit" height="170" width="170">';
+  echo "</form>";
+}
+else{
+	echo '<form action="home.php" onclick="empty()" style="text-align: center">';
+    echo '<input type="image" src="css/images/empty.jpeg" alt="Submit" height="170" width="170">';
+  echo "</form>";
+}
+?>
 <br><br>
 <a href="home.php"><h4>Want to buy more !!</h4></a>
 			<br>

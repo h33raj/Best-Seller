@@ -15,8 +15,30 @@ session_start();
 	<![endif]-->
         <script type="text/javascript" src="js/buy.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
+	 <script type = "text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 3000);
+          }
+
+          var images = [], x = -1;
+          images[0] = "/css/images/image01.jpeg";
+          images[1] = "/css/images/image2.jpeg";
+          images[2] = "/css/images/image5.png";
+          images[3] = "/css/images/sale.jpg";
+          images[4]= "/css/images/image8.jpg";
+      </script>
 </head>
-<body>
+<body onload = "startTimer()">
 	<!-- Header -->
 	<div id="header" class="shell">
 		<div id="logo"><h1><a href="home.php">BestSeller</a></h1></div>
@@ -29,6 +51,7 @@ session_start();
 				<li><a href="billing.php">Billing</a></li>
 				<li><a href="reset.php">Reset</a></li>
 				<li><a href="logout.php"><strong><?php echo $_SESSION["state"];?></strong></a></li>
+		
 			</ul>
 		</div>
 		<!-- End Navigation -->
@@ -37,11 +60,15 @@ session_start();
 		<div id="login-details">
 		<p><strong>Welcome ,</stong><a href="index.html" id="user"><strong><?php echo $_SESSION["name"];?></strong></a></p><p><a href="billing.php" class="cart" ><img src="css/images/cart-icon.png" alt="Want to bill it?" /></a>Shopping Cart (<?php echo $_SESSION["count"];?>) <a href="#" onload="disp()" class="sum">&#x20B9;&nbsp;<?php echo $_SESSION["sum"];?></a></p>
 		</div>
+		<center><img id="img" src="/css/images/sale.jpg" height="175" width="500" alt="Smiley face" border="5">
+		</center>
 		<!-- End Login-details -->
 	</div>
+	
 	<!-- End Header -->
 	<!-- Main -->
 	<div id="main" class="shell">
+		
 		<!-- Content -->
 		<div id="content">
 			<!-- Products -->
@@ -149,7 +176,7 @@ session_start();
 									<span class="description">Wireless controller<br />500 GB Console<br />5 Free games</span>
 								</span>
 							</a>
-							<a href="click.php?price=19999&name=Xbox 360" class="buy-btn"><span class="price"><span class="low"></span>@&nbsp;&#x20B9;&nbsp;39000<span class="high"></span>/-&nbsp;&nbsp;</span></a>
+							<a href="click.php?price=19999&name=Xbox 360" class="buy-btn"><span class="price"><span class="low"></span>@&nbsp;&#x20B9;&nbsp;19000<span class="high"></span>/-&nbsp;&nbsp;</span></a>
 						</div>
 					</li>
 				</ul>

@@ -36,9 +36,14 @@ session_start();
           images[2] = "/css/images/image5.png";
           images[3] = "/css/images/sale.jpg";
           images[4]= "/css/images/image8.jpg";
+          images[5]="/css/images/books.png";
+          function pageScroll() {
+    	window.scrollBy(0,50); // horizontal and vertical scroll increments
+    	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
+}
       </script>
 </head>
-<body onload = "startTimer()">
+<body onload = "startTimer()" onload="pageScroll">
 	<!-- Header -->
 	<div id="header" class="shell">
 		<div id="logo"><h1><a href="home.php">BestSeller</a></h1></div>

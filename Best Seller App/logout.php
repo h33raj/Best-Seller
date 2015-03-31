@@ -19,5 +19,5 @@ $_SESSION['name']="Guest";
 $_SESSION['state']=" ";
 $_SESSION['sum']=0;
 $_SESSION['count']=0;
-header('Location: home.php');
+header('Location: index.html');
 ?>

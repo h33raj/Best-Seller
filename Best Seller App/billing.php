@@ -1,6 +1,13 @@
 <?php
 session_start();
 ?>
+<?php
+if($_SESSION['name']!="Guest"){    	
+}   
+else{
+	echo "<script type='text/javascript'>alert('Log in first!');</script>";
+	}
+?>
 <html>
 <head>
 	<title>Best Seller</title>
@@ -21,6 +28,9 @@ session_start();
 	}
 	function empty(){
 		alert("Your shopping cart is empty!");
+	}
+	function login(){
+		alert("Please log In to shopping cart!");
 	}
 	</script>
 </head>
@@ -90,9 +100,14 @@ $conn->close();
 ?>
 <br>
 <?php 
-if($_SESSION['sum']!=0){
+if(($_SESSION['sum']!=0) && ($_SESSION['name']!="Guest")){
  echo '<form action="reset.php" onclick="buy()" style="text-align: center">';
     echo '<input type="image" src="css/images/buy_button.jpg" alt="Submit" height="170" width="170">';
+  echo "</form>";
+}
+else if($_SESSION['name']=="Guest"){
+	echo '<form action="index.html" onclick="login()" style="text-align: center">';
+    echo '<input type="image" src="css/images/login.jpg" alt="Submit" height="170" width="170">';
   echo "</form>";
 }
 else{

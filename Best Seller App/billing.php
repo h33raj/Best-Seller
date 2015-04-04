@@ -83,19 +83,20 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     echo "<table border='1'>";
-echo "<tr> <th>Name</th> <th>Price</th> </tr>";
+    echo "<tr> <th>Name</th> <th>Price</th> </tr>";
     while($row = $result->fetch_assoc()) {
 		echo "<tr><td>"; 
-	echo $row['name'];
-	echo "</td><td>"; 
-	echo $row['price'];
-	echo "</td></tr>";   
+	    echo $row['name'];
+	    echo "</td><td>"; 
+	    echo $row['price'];
+	    echo "</td></tr>";   
     }
     echo "</table>";
     echo "</div>";
-} else {
+    }
+    else {
     echo "<center>"."Please buy something!"."</center>"."<br>"."<br>";
-}
+    }
 $conn->close();
 ?>
 <br>

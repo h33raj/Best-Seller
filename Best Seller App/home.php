@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_SESSION['name']==""){
+	$_SESSION['name']="Guest";
+	$_SESSION['sum']=0;
+}
 ?>
 <html>
 <head>
@@ -51,8 +55,8 @@ session_start();
 		<div id="navigation">
 			<ul>
 				<li><a href="home.php" class="active">Home</a></li>
-				<li><a href="#">Products</a></li>
-				<li><a href="#">Promotions</a></li>
+				<li><a href="chitchat.php">Global Chat</a></li>
+				<li><a href="feedback.html">Feedback</a></li>
 				<li><a href="billing.php">Billing</a></li>
 				<li><a href="reset.php">Reset</a></li>
 				<li><a href="logout.php"><strong><?php echo $_SESSION["state"];?></strong></a></li>

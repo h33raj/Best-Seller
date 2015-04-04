@@ -28,7 +28,7 @@ $count=mysqli_num_rows($query);
         }
     else
     {
-        echo "Invalid username or password";
+        echo "<script type='text/javascript'>alert('Invalid credentials! Please try again!');window.location.href='index.html';</script>";
         }   
 $sql = "TRUNCATE TABLE cart";
 mysqli_query($conn, $sql) or die(mysqli_error());

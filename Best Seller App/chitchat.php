@@ -1,6 +1,11 @@
+<?php
+session_start();
+if($_SESSION['name']=="Guest"){
+	header("location: index.php");
+}
+?>
 <html>
 <head>
-	<meta http-equiv="refresh" content="20; url=chitchat.php">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
@@ -15,7 +20,13 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    
+    <script type="text/javascript">
+    var auto_refresh = setInterval(
+function ()
+{
+$('#time').load('load_chat.php').fadeIn("slow");
+}, 1000);
+  </script>
 </head>
 <body>
 
@@ -42,7 +53,7 @@
                                 </ul>
                             </div>
                     </div>
-                    <div class="panel-body chat-box-main">
+                    <div class="panel-body chat-box-main" id="time">
                     <?php
 						$servername = "localhost";
                         $username = "root";

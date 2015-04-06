@@ -50,11 +50,11 @@ if($_SESSION['name']==""){
 <body onload = "startTimer()" onload="pageScroll">
 	<!-- Header -->
 	<div id="header" class="shell">
-		<div id="logo"><h1><a href="home.php">BestSeller</a></h1></div>
+		<div id="logo"><h1><a href="index.php">BestSeller</a></h1></div>
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-				<li><a href="home.php" class="active">Home</a></li>
+				<li><a href="index.php" class="active">Home</a></li>
 				<li><a href="chitchat.php">Global Chat</a></li>
 				<li><a href="feedback.html">Feedback</a></li>
 				<li><a href="billing.php">Billing</a></li>
@@ -67,7 +67,7 @@ if($_SESSION['name']==""){
 		<div class="cl">&nbsp;</div>
 		<!-- Login-details -->
 		<div id="login-details">
-		<p><strong>Welcome ,</stong><a href="index.html" id="user"><strong><?php echo $_SESSION["name"];?></strong></a></p><p><a href="billing.php" class="cart" ><img src="css/images/cart-icon.png" alt="Want to bill it?" /></a>Shopping Cart (<?php echo $_SESSION["count"];?>) <a href="#" onload="disp()" class="sum">&#x20B9;&nbsp;<?php echo $_SESSION["sum"];?></a></p>
+		<p><strong>Welcome ,</stong><a href="index.php" id="user"><strong><?php echo $_SESSION["name"];?></strong></a></p><p><a href="billing.php" class="cart" ><img src="css/images/cart-icon.png" alt="Want to bill it?" /></a>Shopping Cart (<?php echo $_SESSION["count"];?>) <a href="#" onload="disp()" class="sum">&#x20B9;&nbsp;<?php echo $_SESSION["sum"];?></a></p>
 		</div>
 		<center><img id="img" src="/css/images/sale.jpg" height="175" width="500" alt="Smiley face" border="5">
 		</center>
@@ -198,6 +198,10 @@ if($_SESSION['name']==""){
 		</div>
 		<!-- End Content -->
 		<div class="cl">&nbsp;</div>
+		 <br/>		         <br/>
+             <p align="center">Amrita FOSS  		             
+             <br/>		             <br/>
+-            &copy; 2009-2015 Free and Open Source Software club, Amritapuri</p>
 	</div>
 	
 </body>

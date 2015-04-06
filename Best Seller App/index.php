@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['name']!="Guest"){
+	header("location: home.php");
+}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
@@ -6,7 +12,7 @@
 <head>
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Register Form</title>
+      <title>Login - Best Seller</title>
       <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="css/images/favicon.ico" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
@@ -20,27 +26,18 @@
 	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
       <script>
       function validateForm() {
-    var x = document.forms["flogin"]["name"].value;
+    var x = document.forms["flogin"]["login"].value;
     if (x == null || x == "") {
         alert("Name must be filled out");
         return false;
     }
-    var x = document.forms["flogin"]["email"].value;
+    var x = document.forms["flogin"]["password"].value;
     if (x == null || x == "") {
-        alert("email must be filled out");
-        return false;
-    }
-    var x = document.forms["flogin"]["message"].value;
-    if (x == null || x == "") {
-        alert("Message is empty! We love to read feedback from you");
+        alert("Password must be filled out");
         return false;
     }
 }
 </script>
-<script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</script>
-
       </head>
       <body>
       <!-- Header -->
@@ -60,35 +57,28 @@
 	<div id="login-details">
 	  <p>Welcome, <a href="#" id="user">Guest</a></p><p><a href="#" class="cart" ><img src="css/images/cart-icon.png" alt="" /></a>Shopping Cart (0) <a href="#" class="sum">&#x20B9;&nbsp;0</a></p>
 	</div>
-	</div>
 	<!-- End Login-details -->
-<!-- Main -->
-	<div id="main" class="shell">
-	<form action="feedback.php" method="post" name="flogin" onsubmit="return validateForm()">
-		<table class="form">
-			<tr>
-				<th><label for="name"><strong>Name: </strong></label></th>
-				<td><input class="inp-text" name="name" id="name" type="text" size="30" /></td>
-			</tr>
-
-			<tr>
-				<th><label class="email" for="email" title="Will be masked"><strong>E-mail: </strong></label></th>
-				<td><input class="inp-text" name="email" id="email" type="text"/></td>
-			</tr>
-			<tr>
-				<br><br>
-				<th class="message-up"><label for="message"><strong>&nbsp;&nbsp;Message:</strong></label></th>
-				<td>
-					<br>
-				<textarea name="message" id="message" cols="70" rows="10" size="35" style="font-size:15px"></textarea>
-				</td>
-			</tr>
-			<tr>
-				<td class="submit-button-right" colspan="2"><input class="submit-text" type="submit" value="Send Feedback" title="Send your message" /></td>
-			</tr>
-		</table>
-	</form>
-	</div>
+      </div>
+      <section class="container">
+	<div class="login">
+	  <h1>Login to Web App</h1>
+	  <form method="post" action="login.php" onsubmit="return validateForm()" name="flogin">
+	    <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+	      <p><input type="password" name="password" value="" placeholder="Password"></p>
+		<p class="remember_me">
+		  <label>
+		    <input type="checkbox" name="remember_me" id="remember_me">
+		      Remember me on this computer
+		    </label>
+		  </p>
+		  <p class="submit"><input type="submit" name="commit" value="Login"></p>
+		  </form>
+		</div>
+		
+		<div class="login-help">
+		  <p><a href="register.php"><strong>Are you a new user?</h3></strong></a></p>
+		</div>
+	      </section>
 	    </body>
 	  </html>
 	  

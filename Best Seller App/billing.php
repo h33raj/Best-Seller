@@ -41,9 +41,9 @@ else{
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-				<li><a href="home.php" class="active">Home</a></li>
-				<li><a href="#">Products</a></li>
-				<li><a href="#">Promotions</a></li>
+				<li><a href="index.php" class="active">Home</a></li>
+				<li><a href="home.php">Products</a></li>
+				
 				<li><a href="billing.php">Billing</a></li>
 				<li><a href="reset.php">Reset</a></li>
 				<li><a href="logout.php"><strong><?php echo $_SESSION["state"];?></strong></a></li>
@@ -107,7 +107,7 @@ if(($_SESSION['sum']!=0) && ($_SESSION['name']!="Guest")){
   echo "</form>";
 }
 else if($_SESSION['name']=="Guest"){
-	echo '<form action="index.html" onclick="login()" style="text-align: center">';
+	echo '<form action="index.php" onclick="login()" style="text-align: center">';
     echo '<input type="image" src="css/images/login.jpg" alt="Submit" height="170" width="170">';
   echo "</form>";
 }

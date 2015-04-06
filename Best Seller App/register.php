@@ -36,11 +36,11 @@
       <body>
       <!-- Header -->
       <div id="header" class="shell">
-	<div id="logo"><h1><a href="index.html">BestSeller</a></h1></div>
+	<div id="logo"><h1><a href="index.php">BestSeller</a></h1></div>
 	<!-- Navigation -->
 	<div id="navigation">
 	  <ul>
-	    <li><a href="index.html" class="active">Home</a></li>
+	    <li><a href="index.php" class="active">Home</a></li>
 	    <li><a href="home.php">Products</a></li>
 	    <li><a href="feedback.php">Feedback</a></li>
 	    <li><a href="index.html">Log In</a></li>
@@ -56,16 +56,12 @@
       </div>
       <section class="container">
 	<div class="login">
-	  <h1>Resgister</h1>
+	  <h1>Register</h1>
 	  
 	  <form method="post" action="entry.php" onsubmit="return validateForm()" name="flogin">
 	    <p><input type="text" name="login" value="" placeholder="Username"></p>
 	      <p><input type="password" name="password" value="" placeholder="Password"></p>
 		<p class="remember_me">
-		  <label>
-		    <input type="checkbox" name="remember_me" id="remember_me">
-		      Remember me on this computer
-		    </label>
 		  </p>
 		  <p class="submit"><input type="submit" name="commit" value="Register"></p>
 		  </form>

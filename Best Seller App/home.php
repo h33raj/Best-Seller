@@ -199,7 +199,7 @@ if($_SESSION['name']==""){
 		<!-- End Content -->
 		<div class="cl">&nbsp;</div>
 		 <br/>		         <br/>
-             <p align="center">Amrita FOSS  		             
+             <p align="center"><a href="http://foss.amrita.ac.in">Amrita FOSS</a>  		             
              <br/>		             <br/>
 -            &copy; 2009-2015 Free and Open Source Software club, Amritapuri</p>
 	</div>

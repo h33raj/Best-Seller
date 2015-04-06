@@ -33,6 +33,15 @@ else{
 		alert("Please log In to shopping cart!");
 	}
 	</script>
+	<style>
+    table, td, th {
+         border: 1px solid black;
+    }
+
+    td {
+        padding: 15px;
+    }
+</style>
 </head>
 <body>
 	<!-- Header -->
@@ -53,7 +62,7 @@ else{
 		<div class="cl">&nbsp;</div>
 		<!-- Login-details -->
 		<div id="login-details">
-		<p><strong>Welcome ,</stong><a href="index.html" id="user"><strong><?php echo $_SESSION["name"];?></strong></a></p><p><a href="billing.php" class="cart" ><img src="css/images/cart-icon.png" alt="Want to bill it?" /></a>Shopping Cart (<?php echo $_SESSION["count"];?>) <a href="#" onload="disp()" class="sum">&#x20B9;&nbsp;<?php echo $_SESSION["sum"];?></a></p>
+		<p><strong>Welcome ,</stong><a href="index.php" id="user"><strong><?php echo $_SESSION["name"];?></strong></a></p><p><a href="billing.php" class="cart" ><img src="css/images/cart-icon.png" alt="Want to bill it?" /></a>Shopping Cart (<?php echo $_SESSION["count"];?>) <a href="#" onload="disp()" class="sum">&#x20B9;&nbsp;<?php echo $_SESSION["sum"];?></a></p>
 		</div>
 		<!-- End Login-details -->
 	</div>
@@ -88,15 +97,21 @@ if ($result->num_rows > 0) {
 		echo "<tr><td>"; 
 	    echo $row['name'];
 	    echo "</td><td>"; 
-	    echo $row['price'];
+	    echo "&#x20B9; " .$row['price'];
 	    echo "</td></tr>";   
     }
+    echo "<tr><td>";
+    echo "<b>Total Amount</b>";
+    echo "</td><td>";
+    echo "&#x20B9; " .$_SESSION['sum'];
+    echo "</td></tr>";
     echo "</table>";
     echo "</div>";
     }
     else {
     echo "<center>"."Please buy something!"."</center>"."<br>"."<br>";
     }
+    
 $conn->close();
 ?>
 <br>

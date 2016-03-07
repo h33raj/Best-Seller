@@ -4,9 +4,9 @@ session_start();
 ?>
 <?php
 $servername = "localhost";
-$username = "root";
-$password = 1996;
-$dbname = "db";
+$username = "";
+$password = ;
+$dbname = "";
 $user=$_POST["login"];
 $pass=$_POST["password"];
 // Create connection

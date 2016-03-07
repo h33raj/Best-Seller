@@ -1,6 +1,0 @@
-function buy(n)
-{
-	var sum = localStorage.getItem('cart',sum);
-	sum=sum+n;
-	localStorage.setItem('favoriteflavor',sum);
-}

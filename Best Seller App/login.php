@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = 1996;
+$username = "";
+$password = ;
 $dbname = "db";
 $_SESSION['state']="Log out";
 $user=$_POST["login"];

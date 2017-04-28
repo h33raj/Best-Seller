@@ -16,7 +16,6 @@ $query=mysqli_query($conn,"SELECT * FROM register WHERE username='$user' && pass
 // Mysql_num_row is counting table row
 $count=mysqli_num_rows($query);
     $row=mysqli_fetch_array($query);
-"SELECT * FROM `register` WHERE `username` LIKE '$user' AND `password` LIKE '$pass'";
     if ($count>0)
     {
         session_start();
